@@ -1,5 +1,11 @@
 package com.user.action;
 
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.struts2.ServletActionContext;
+
 import com.user.dto.UserDto;
 import com.user.service.UserService;
 import com.user.service.impl.UserServiceImpl;
@@ -24,6 +30,14 @@ public class UserAction {
 		
 		this.message = this.userService.judgeCanLogin(userDto);
 		if( "can login".equals(this.message)){
+			
+			UserDto userDtoIndb = this.userService.getUserByUserName(userDto.getUserName());
+			
+			HttpSession session = ServletActionContext.getRequest().getSession(); 
+			session.setAttribute("realName", userDtoIndb.getRealName() );
+			session.setAttribute("loginTime", new Date() );
+			session.setAttribute("headImage", userDtoIndb.getHeadImage() );
+			
 			return "success";
 		}else{
 			return "error";
