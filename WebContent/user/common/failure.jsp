@@ -7,19 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<s:form action="addUserAction" method="post" pachage="/user" enctype="multipart/form-data">
-	<s:textfield name="userDto.userName" label="userName" />
-	<s:textfield name="userDto.realName" label="real name" />
-	<s:password name="userDto.password" label="password" ></s:password>
-	<s:radio label="sex" list="#{'M':'boy','F':'girl','o':'others' }" name="userDto.gender" />
-	<s:textfield name="userDto.birthday" label="birthday" />
-	<s:file name="files" label="protrait" />
-	
-	<s:sumit value="submit"></s:sumit>
-	<s:reset value="reset"></s:reset>
-	
-</s:form>
-
+${message}
 </body>
 </html>

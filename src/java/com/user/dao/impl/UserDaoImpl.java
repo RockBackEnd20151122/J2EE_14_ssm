@@ -47,4 +47,33 @@ public class UserDaoImpl implements UserDao {
 		
 	}
 
+	@Override
+	public UserDto getUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		String resource = "mybatis/mybatis-config.xml";
+		InputStream in = null;
+		
+		try {
+			in = Resources.getResourceAsStream(resource);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(in);
+		SqlSession sqlSession = factory.openSession();
+		
+		UserDto userDto = new UserDto();
+		
+		try {
+			userDto = sqlSession.selectOne("userManager.getUserByUserName", userName);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			sqlSession.commit();
+			sqlSession.close();
+		}
+		return userDto;
+	}
+
 }

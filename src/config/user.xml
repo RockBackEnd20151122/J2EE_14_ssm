@@ -6,9 +6,14 @@
 <struts>
 
     <package name="user" namespace="/user" extends="struts-default">
-
+    	
         <action name="addUserAction" class="com.user.action.UserAction" method="addUser">
             <result name="success">/user/common/success.jsp</result>
+            <result name="error">/user/common/failure.jsp</result>
+        </action>
+        
+        <action name="loginAction" class="com.user.action.UserAction" method="login" >
+        	<result name="success">/user/common/success.jsp</result>
             <result name="error">/user/common/failure.jsp</result>
         </action>
         

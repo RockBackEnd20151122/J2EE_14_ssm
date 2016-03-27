@@ -6,4 +6,6 @@ public interface UserService {
 
 	void addUser(UserDto user);
 	
+	String judgeCanLogin( UserDto userDto);
+	
 }
