@@ -3,7 +3,8 @@
 /mybatis/
 /struts.xml
 /tables.sql
+/upload.xml
 /user/
 /user.xml
 /util/
-/service/
+/file.xml
