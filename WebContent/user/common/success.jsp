@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<div>
+	hello, ${realName}. your login time is ${loginTime }
+	</div>
 the result is:
 ${message}
 </body>
