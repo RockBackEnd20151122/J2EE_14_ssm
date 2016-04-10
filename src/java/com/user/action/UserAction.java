@@ -52,9 +52,9 @@ public class UserAction {
 		session.setAttribute("headImage", userDtoIndb.getHeadImage() );
 	}
 	
-	public UserAction(){
-		this.userService = new UserServiceImpl();
-	}
+//	public UserAction(){
+//		this.userService = new UserServiceImpl();
+//	}
 	
 	public String addUser(){
 		this.userService.addUser(userDto);

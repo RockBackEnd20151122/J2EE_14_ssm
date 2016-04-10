@@ -3,7 +3,6 @@ package com.user.service.impl;
 import java.util.Date;
 
 import com.user.dao.UserDao;
-import com.user.dao.impl.UserDaoImpl;
 import com.user.dto.UserDto;
 import com.user.service.UserService;
 import com.user.util.BaseUtils;
@@ -31,10 +30,7 @@ public class UserServiceImpl implements UserService {
 			return UserBaseUtil.PASSWORD_ERROR;
 		}
 	}
-	
-	public UserServiceImpl(){
-		this.userDao = new UserDaoImpl();
-	}
+
 	
 	@Override
 	public void addUser(UserDto user) {
