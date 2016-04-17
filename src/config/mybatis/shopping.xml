@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shopping.dao.ProductDao">
+
+	<!-- 直接通过map或者javabean插入数据 -->
+	<insert id="addProduct" parameterType="com.shopping.dto.ProductDto">
+		insert into
+		products(product_id,product_name,product_price,product_type,product_status,product_count,product_discount,product_image,product_remark,create_by,create_time,update_by,update_time) values(
+		#{productId},
+		#{productName},
+		#{productPrice},
+		#{productType},
+		#{productStatus},
+		#{productCount},
+		#{productDiscount},
+		#{productImage},
+		#{productRemark},
+		#{createBy},
+		#{createTime},
+		#{updateBy},
+		#{updateTime}
+		)
+	</insert>
+	
+	<resultMap type="com.shopping.dto.ProductDto" id="productMap">
+        	<result property="productId" column="product_id" />
+        	<result property="productName" column="product_name" />
+        	<result property="product_price" column="productPrice" />
+        	<result property="productType" column="product_type" />
+        	<result property="productStatus" column="product_status" />
+        	<result property="productCount" column="product_count" />
+        	<result property="productDiscount" column="product_discount" />
+        	<result property="productImage" column="product_image" />
+        	<result property="productRemark" column="product_remark" />
+        	<result property="createBy" column="create_by" />
+        	<result property="createTime" column="create_time" />
+        	<result property="updateBy" column="update_by" />
+        	<result property="updateTime" column="update_time" />
+        </resultMap>
+        <select id="getProductByID" resultMap="productMap" parameterType="string" >
+	        select * from
+	        product u where u.product_id = #{_parameter}
+        </select>
+</mapper>

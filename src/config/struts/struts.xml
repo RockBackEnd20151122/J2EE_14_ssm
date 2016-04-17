@@ -14,5 +14,6 @@
 
 <include file="struts/user.xml"></include>
 <include file="struts/file.xml"></include>
+<include file="struts/shopping.xml"></include>
 
 </struts>
