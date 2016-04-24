@@ -13,7 +13,13 @@ public class ShoppingAction {
 	
 	public String addProduct( ){
 		this.shoppingService.addProduct(productDto);
-		return "success";
+		
+		productList = this.shoppingService.queryProductList(productDto);
+		if( productList.isEmpty()){
+			return "success";
+		}else{
+			return "list";
+		}
 	}
 	
 	public String queryProduct(){

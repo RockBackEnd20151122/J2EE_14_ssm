@@ -10,6 +10,7 @@
         <action name="addProductAction" class="shoppingAction" method="addProduct">
             <result name="success">/shopping/common/success.jsp</result>
             <result name="error">/shopping/common/failure.jsp</result>
+            <result name="list">/shopping/products.jsp</result>
         </action>
         
         <action name="queryProductAction" class="shoppingAction" method="queryProduct">
