@@ -21,6 +21,8 @@ public class ProductDto {
 	private Double productPriceStart;
 	private Double productPriceEnd;
 	
+	private int productBuyCount;
+	
 	public String getProductId() {
 		return productId;
 	}
@@ -110,5 +112,11 @@ public class ProductDto {
 	}
 	public void setProductPriceEnd(Double productPriceEnd) {
 		this.productPriceEnd = productPriceEnd;
+	}
+	public int getProductBuyCount() {
+		return productBuyCount;
+	}
+	public void setProductBuyCount(int productBuyCount) {
+		this.productBuyCount = productBuyCount;
 	}
 }

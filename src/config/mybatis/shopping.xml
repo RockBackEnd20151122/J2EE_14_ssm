@@ -39,9 +39,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
        	<result property="updateBy" column="update_by" />
        	<result property="updateTime" column="update_time" />
     </resultMap>
-    <select id="getProductByID" resultMap="productMap" parameterType="string" >
+    <select id="getProductByID" resultMap="productMap" parameterType="java.lang.String" >
      select * from
-     product u where u.product_id = #{_parameter}
+     <!-- product u where u.product_id = #{_parameter} -->
+     products u where u.product_id = #{productId}
     </select>
     
     <select id="queryProductList" resultMap="productMap" parameterType="com.shopping.dto.ProductDto" >

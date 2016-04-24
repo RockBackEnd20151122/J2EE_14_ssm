@@ -17,6 +17,15 @@
             <result name="success">/shopping/products.jsp</result>
             <result name="error">/shopping/common/failure.jsp</result>
         </action>
+        <action name="addShoppingCartAction" class="shoppingAction" method="addShoppingCart">
+            <result name="success">/shopping/products.jsp</result>
+            <result name="error">/shopping/common/failure.jsp</result>
+        </action>
+        
+        <action name="queryShoppingCardAction" class="shoppingAction" method="queryShoppingCard">
+            <result name="success">/shopping/shoppingCard.jsp</result>
+            <result name="error">/shopping/common/failure.jsp</result>
+        </action>
         
     </package>
 </struts>

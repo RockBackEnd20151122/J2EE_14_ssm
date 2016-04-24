@@ -14,4 +14,6 @@ public interface ShoppingService {
 	
 	List<ProductDto> queryProductList(ProductDto productDto);
 	
+	ProductDto queryProduct( String id );
+	
 }

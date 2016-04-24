@@ -55,7 +55,7 @@
 
 
 		<tr>
-			<td><s:url id="url" action="queryShopCartAction"
+			<td><s:url id="url" action="queryShoppingCardAction"
 					namespace="/shopping">
 				</s:url> <s:a href="%{url}"> 查看购物车</s:a></td>
 		</tr>

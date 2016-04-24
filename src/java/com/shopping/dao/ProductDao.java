@@ -10,8 +10,8 @@ public interface ProductDao {
 	
 	void addProduct( ProductDto pro );
 	
-	public ProductDto getProductByProductId (String id);
+	public ProductDto getProductByID (String id);
 	
 	public List<ProductDto> queryProductList(ProductDto productDto);
-
+	
 }

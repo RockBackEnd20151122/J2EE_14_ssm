@@ -52,8 +52,13 @@ public class ShoppingServiceImpl implements ShoppingService {
 	public List<ProductDto> queryProductList(ProductDto productDto) {
 		// TODO Auto-generated method stub
 		List<ProductDto> list = this.productDao.queryProductList(productDto);
-		
 		return list;
 	}
 
+	@Override
+	public ProductDto queryProduct(String id) {
+		// TODO Auto-generated method stub
+		return this.productDao.getProductByID(id);
+	}
+	
 }
