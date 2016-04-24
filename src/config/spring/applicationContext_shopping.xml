@@ -13,15 +13,12 @@
 		<property name="mapperInterface" value="com.shopping.dao.ProductDao" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
-	
 	<!-- proxy 在service层 -->
 	<!-- 代理service 的接口，注入实现类 -->
 	<bean id="shoppingService" class="com.shopping.service.impl.ShoppingServiceImpl">
 		<property name="productDao" ref="productDao" />
 	</bean>
-	
 	<bean id="shoppingAction" class="com.shopping.action.ShoppingAction">
 		<property name="shoppingService" ref="shoppingService" />
 	</bean>
-
-</beans>  
+</beans>

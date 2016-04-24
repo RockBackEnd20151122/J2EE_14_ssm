@@ -1,6 +1,7 @@
 package com.shopping.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import com.shopping.dao.ProductDao;
 import com.shopping.dto.ProductDto;
@@ -45,6 +46,14 @@ public class ShoppingServiceImpl implements ShoppingService {
 
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
+	}
+
+	@Override
+	public List<ProductDto> queryProductList(ProductDto productDto) {
+		// TODO Auto-generated method stub
+		List<ProductDto> list = this.productDao.queryProductList(productDto);
+		
+		return list;
 	}
 
 }

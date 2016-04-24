@@ -25,22 +25,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<resultMap type="com.shopping.dto.ProductDto" id="productMap">
-        	<result property="productId" column="product_id" />
-        	<result property="productName" column="product_name" />
-        	<result property="product_price" column="productPrice" />
-        	<result property="productType" column="product_type" />
-        	<result property="productStatus" column="product_status" />
-        	<result property="productCount" column="product_count" />
-        	<result property="productDiscount" column="product_discount" />
-        	<result property="productImage" column="product_image" />
-        	<result property="productRemark" column="product_remark" />
-        	<result property="createBy" column="create_by" />
-        	<result property="createTime" column="create_time" />
-        	<result property="updateBy" column="update_by" />
-        	<result property="updateTime" column="update_time" />
-        </resultMap>
-        <select id="getProductByID" resultMap="productMap" parameterType="string" >
-	        select * from
-	        product u where u.product_id = #{_parameter}
-        </select>
+       	<result property="productId" column="product_id" />
+       	<result property="productName" column="product_name" />
+       	<result property="product_price" column="productPrice" />
+       	<result property="productType" column="product_type" />
+       	<result property="productStatus" column="product_status" />
+       	<result property="productCount" column="product_count" />
+       	<result property="productDiscount" column="product_discount" />
+       	<result property="productImage" column="product_image" />
+       	<result property="productRemark" column="product_remark" />
+       	<result property="createBy" column="create_by" />
+       	<result property="createTime" column="create_time" />
+       	<result property="updateBy" column="update_by" />
+       	<result property="updateTime" column="update_time" />
+    </resultMap>
+    <select id="getProductByID" resultMap="productMap" parameterType="string" >
+     select * from
+     product u where u.product_id = #{_parameter}
+    </select>
+    
+    <select id="queryProductList" resultMap="productMap" parameterType="com.shopping.dto.ProductDto" >
+     select * from products
+     <include refid="selectOption" />
+     	order by product_name
+    </select>
+    <!-- multiple conditions -->
+    <sql id="selectOption">
+    	<where>
+    	 	<if test="productName!=null and productName!=''">and product_name like '%${productName}%'</if>
+    	 	<if test="productType!=null and productType!=''">and product_type=${productType}</if>
+    	 	<if test="productPriceStart!=null and productPriceStart!=''">and product_price&lt;=${productPriceStart}</if>
+    	 	<if test="productPriceEnd!=null and productPriceEnd!=''">and product_price &lt;=${productPriceEnd}</if>
+    	</where>
+    </sql>
 </mapper>

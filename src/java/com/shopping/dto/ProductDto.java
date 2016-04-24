@@ -17,6 +17,10 @@ public class ProductDto {
 	private Date createTime;
 	private String updateBy;
 	private Date updateTime;
+	
+	private Double productPriceStart;
+	private Double productPriceEnd;
+	
 	public String getProductId() {
 		return productId;
 	}
@@ -95,8 +99,16 @@ public class ProductDto {
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
-	
-	
-	
-	
+	public Double getProductPriceStart() {
+		return productPriceStart;
+	}
+	public void setProductPriceStart(Double productPriceStart) {
+		this.productPriceStart = productPriceStart;
+	}
+	public Double getProductPriceEnd() {
+		return productPriceEnd;
+	}
+	public void setProductPriceEnd(Double productPriceEnd) {
+		this.productPriceEnd = productPriceEnd;
+	}
 }

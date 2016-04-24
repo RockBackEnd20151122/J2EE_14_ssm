@@ -1,5 +1,7 @@
 package com.shopping.service;
 
+import java.util.List;
+
 import com.shopping.dto.ProductDto;
 
 public interface ShoppingService {
@@ -9,5 +11,7 @@ public interface ShoppingService {
 	void adjustProduct( ProductDto product );
 	
 	void removeProductById( String id );
-
+	
+	List<ProductDto> queryProductList(ProductDto productDto);
+	
 }

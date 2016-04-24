@@ -21,7 +21,8 @@ in
  -->
 	<s:textfield name="productDto.productName" label="product name" />
 	<s:textfield name="productDto.productPrice" label="price" />
-	<s:textfield name="productDto.productType" label="productType" />
+	<s:select name="productDto.productType" label="productType" list="#{'001':'水果','002':'其他' }" />
+	
 	<s:radio label="product status" list="#{'M':'boy','F':'girl','o':'others' }" name="productDto.productStatus" />
 	<s:textfield name="productDto.productCount" label="product count" />
 	<s:textfield name="productDto.productImage" label="product image" />

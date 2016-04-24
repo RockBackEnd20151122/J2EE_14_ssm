@@ -12,5 +12,10 @@
             <result name="error">/shopping/common/failure.jsp</result>
         </action>
         
+        <action name="queryProductAction" class="shoppingAction" method="queryProduct">
+            <result name="success">/shopping/products.jsp</result>
+            <result name="error">/shopping/common/failure.jsp</result>
+        </action>
+        
     </package>
 </struts>
