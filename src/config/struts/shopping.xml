@@ -27,5 +27,9 @@
             <result name="error">/shopping/common/failure.jsp</result>
         </action>
         
+        <action name="updateShopCartAction" class="shoppingAction" method="updateShopCart">
+            <result name="success">/shopping/shoppingCard.jsp</result>
+            <result name="error">/shopping/common/failure.jsp</result>
+        </action>
     </package>
 </struts>

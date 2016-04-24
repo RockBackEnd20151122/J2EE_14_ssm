@@ -22,7 +22,7 @@
 			<!-- 迭代器，类似于java中的foreach语句 -->
 			<s:iterator value="shoppingCardList" id="productDto">
 				<tr>
-					<input type="hidden" name="productList"
+					<input type="hidden" name="productIdList"
 						value='<s:property value="#productDto.productId" />'>
 					<td><s:property value="#productDto.productId" /></td>
 					<td><s:property value="#productDto.productName" /></td>

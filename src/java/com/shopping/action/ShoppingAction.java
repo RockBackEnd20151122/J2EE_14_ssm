@@ -26,6 +26,9 @@ public class ShoppingAction extends ActionSupport {
 	private Integer productBuyAccount;
 	private List<ProductDto> shoppingCardList; 
 	
+	private List<String> productIdList;
+	private List<Integer> productCountList;
+	
 	public String addProduct( ){
 		this.shoppingService.addProduct(productDto);
 		
@@ -96,6 +99,17 @@ public class ShoppingAction extends ActionSupport {
 		}
 		return this.SUCCESS;
 	}
+	
+	public String updateShopCart(){
+		httpSession= ServletActionContext.getRequest().getSession();
+		Map<String, Integer> shoppingCardMap = (Map<String, Integer>) httpSession.getAttribute("shoppingCard");
+		shoppingCardMap.clear();
+		for( int i=0; i<this.productIdList.size(); i++ ){
+			shoppingCardMap.put(productIdList.get(i), productCountList.get(i));
+		}
+		
+		return this.queryShoppingCard();
+	}
 
 	public ShoppingService getShoppingService() {
 		return shoppingService;
@@ -155,6 +169,30 @@ public class ShoppingAction extends ActionSupport {
 
 	public void setShoppingCardList(List<ProductDto> shoppingCardList) {
 		this.shoppingCardList = shoppingCardList;
+	}
+
+
+
+	public List<String> getProductIdList() {
+		return productIdList;
+	}
+
+
+
+	public void setProductIdList(List<String> productIdList) {
+		this.productIdList = productIdList;
+	}
+
+
+
+	public List<Integer> getProductCountList() {
+		return productCountList;
+	}
+
+
+
+	public void setProductCountList(List<Integer> productCountList) {
+		this.productCountList = productCountList;
 	}
 
 }
