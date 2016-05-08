@@ -5,7 +5,7 @@
 
 <struts>
 
-    <package name="shopping" namespace="/shopping" extends="struts-default">
+    <package name="shopping" namespace="/shopping" extends="myBasePackage">
     	
         <action name="addProductAction" class="shoppingAction" method="addProduct">
             <result name="success">/shopping/common/success.jsp</result>

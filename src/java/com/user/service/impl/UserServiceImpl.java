@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
 
 		//spring 相当于有一个dao的实现类
 		this.userDao.addUser(user);
-		this.userDao.addUser(user);
+//		this.userDao.addUser(user);
 		//here is for test 事务
 	}
 

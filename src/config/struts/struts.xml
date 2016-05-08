@@ -4,16 +4,34 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-<!-- 02 -->
-<constant name="struts.custom.i18n.resources" value="mess"></constant>
-<constant name="struts.i18n.encoding" value="UTF-8" />
-<constant name="struts.multipart.maxSize" value="500000000000"></constant>
+	<!-- 02 -->
+	<constant name="struts.custom.i18n.resources" value="mess"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="500000000000"></constant>
 
-<include file="struts-default.xml"></include>
-<include file="struts-plugin.xml"></include>
+	<include file="struts-default.xml"></include>
+	<include file="struts-plugin.xml"></include>
 
-<include file="struts/user.xml"></include>
-<include file="struts/file.xml"></include>
-<include file="struts/shopping.xml"></include>
+	<include file="struts/user.xml"></include>
+	<include file="struts/file.xml"></include>
+	<include file="struts/shopping.xml"></include>
+
+	<package name="myBasePackage" extends="struts-default">
+		<interceptors>
+			<interceptor name="authority"
+				class="util.interceptors.LoginInterceptor" />
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>
+		</interceptors>
+		
+		<default-interceptor-ref name="myStack" />
+
+		<global-results>
+			<result name="login">/common/login.jsp</result>
+		</global-results>
+
+	</package>
 
 </struts>

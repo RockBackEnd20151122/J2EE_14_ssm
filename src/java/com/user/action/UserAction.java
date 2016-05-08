@@ -32,7 +32,7 @@ public class UserAction {
 		
 		this.message = this.userService.judgeCanLogin(userDto);
 		if( UserBaseUtil.CAN_LOGIN.equals(this.message)){
-			
+			//TODO: set the previous url to session and go back;
 			setSession();
 			return "success";
 		}else{
